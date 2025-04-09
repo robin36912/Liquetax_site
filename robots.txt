@@ -1,0 +1,3 @@
+User-agent: *
+disallow: /private-folder/
+Sitemap: https://liquetax.com/sitemap.xml

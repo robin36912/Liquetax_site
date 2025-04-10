@@ -1,0 +1,42 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["Tax", "GST", "Legal", "Startup", "Compliance"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "services"
+    label: "Service Pages"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Meta Description", name: "description", widget: "text" }
+      - { label: "Service Category", name: "category", widget: "select", options: ["business-setup", "registration", "trademark-and-ip", "tax", "compliances", "export-import", "gem", "more"] }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "homepage"
+        label: "Homepage Settings"
+        file: "content/settings/homepage.md"
+        fields:
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Subheadline", name: "subheadline", widget: "text" }
+          - { label: "Call to Action Text", name: "cta_text", widget: "string" }
+          - { label: "Call to Action Link", name: "cta_link", widget: "string" }
